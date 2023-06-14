@@ -1,5 +1,5 @@
 Desafio Técnico - Data Pipeline
-Período de entrega: 5 dias
+Período de entrega: sábado 
 
 
 Objetivo: 
