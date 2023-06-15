@@ -19,7 +19,7 @@ Se optar por Ruby, receberá pontuação extra.
 Leitura dos dados: Utilize uma biblioteca ou módulo adequado para ler os arquivos CSV fornecidos. Se possível, leia todos os arquivos ESTABELECIMENTO disponíveis. O layout dos dados está incluso no link.
 https://dadosabertos.rfb.gov.br/CNPJ/
 
-Organização dos dados: Armazene os dados extraídos em uma estrutura de hash/dicionário, facilitando o acesso e manipulação posterior.
+Organização dos dados: Armazene os dados extraídos em uma estrutura de dicionário, facilitando o acesso e manipulação posterior.
 
 Banco de dados: Salve os dados no MongoDB localmente ou utilize o serviço gratuito MongoAtlas para armazená-los em um banco de dados na nuvem. Opte pela solução mais simples para esta etapa.
 

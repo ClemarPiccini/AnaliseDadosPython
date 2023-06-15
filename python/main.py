@@ -2,9 +2,6 @@ import csv
 import numpy as np
 import pandas as pd
 import requests
-from pymongo import MongoClient
-
-# mostrar o arquivo 
 
 headers = ['CNPJ', 'IDENTIFICADOR MATRIZ/FILIAL', 'RAZÃO SOCIAL/NOME EMPRESARIAL', 'NOME FANTASIA',
            'SITUAÇÃO CADASTRAL', 'DATA SITUACAO CADASTRAL', 'MOTIVO SITUAÇÃO CADASTRAL', 
@@ -24,7 +21,8 @@ df = next(df_reader)
 
 for i, row in df.iterrows():
     for header in headers:
-        data_dict.setdefault(header, []).append(row[header])
+        value = row[header]
+        if pd.notna(value):
+            data_dict.setdefault(header, []).append(value)
 
-    print(row)
-    input("Pressione Enter para continuar...")
+print(data_dict)
