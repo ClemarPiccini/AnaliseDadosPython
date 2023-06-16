@@ -19,19 +19,19 @@ Se optar por Ruby, receberá pontuação extra.
 Leitura dos dados: Utilize uma biblioteca ou módulo adequado para ler os arquivos CSV fornecidos. Se possível, leia todos os arquivos ESTABELECIMENTO disponíveis. O layout dos dados está incluso no link.
 https://dadosabertos.rfb.gov.br/CNPJ/
 
-Organização dos dados: Armazene os dados extraídos em uma estrutura de dicionário, facilitando o acesso e manipulação posterior.
+*Organização dos dados: Armazene os dados extraídos em uma estrutura de dicionário, facilitando o acesso e manipulação posterior.*
 
-Banco de dados: Salve os dados no MongoDB localmente ou utilize o serviço gratuito MongoAtlas para armazená-los em um banco de dados na nuvem. Opte pela solução mais simples para esta etapa.
+*Banco de dados: Salve os dados no MongoDB localmente ou utilize o serviço gratuito MongoAtlas para armazená-los em um banco de dados na nuvem. Opte pela solução mais simples para esta etapa.*
 
 Leitura e processamento dos dados: Recupere os dados do banco de dados e realize as seguintes tarefas:
- a) Calcule a porcentagem de empresas ativas (SITUAÇÃO CADASTRAL).
- b) Conte a quantidade de empresas do setor de restaurantes abertas em cada ano, considerando o prefixo do CNAE PRINCIPAL e a DATA DE INÍCIO ATIVIDADE. O prefixo para empresas de restaurantes é 56.1xxxxx, por exemplo, 5611-2/03 representa um restaurante. 
+ a) *Calcule a porcentagem de empresas ativas (SITUAÇÃO CADASTRAL).*
+ b)**Conte a quantidade de empresas do setor de restaurantes abertas em cada ano, considerando o prefixo do CNAE PRINCIPAL e a DATA DE INÍCIO ATIVIDADE. O prefixo para empresas de restaurantes é 56.1xxxxx, por exemplo, 5611-2/03 representa um restaurante.**
 
 BONUS POINTS: 
-c) Determine a quantidade de empresas localizadas em um raio de 5 km do CEP 01422000. 
-d) Crie uma tabela de correlação entre o CNAE FISCAL PRINCIPAL e o CNAE FISCAL SECUNDÁRIA.
+c)**Determine a quantidade de empresas localizadas em um raio de 5 km do CEP 01422000.**
+d)**Crie uma tabela de correlação entre o CNAE FISCAL PRINCIPAL e o CNAE FISCAL SECUNDÁRIA.**
 
-Exportação dos dados: Exporte os resultados obtidos no passo anterior para um arquivo CSV. Para ganhar pontos extras, exporte os dados para um formato Excel.
+*Exportação dos dados: Exporte os resultados obtidos no passo anterior para um arquivo CSV. Para ganhar pontos extras, exporte os dados para um formato Excel.*
 
 
 Atente-se para:

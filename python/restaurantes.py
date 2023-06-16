@@ -6,21 +6,23 @@ db = client['meu_banco_de_dados']
 collection = db['meu_colecao']
 
 # Definir o prefixo do CNAE PRINCIPAL para empresas de restaurantes
-prefixo_cnae_restaurantes = "561"
+prefixo_cnae_restaurantes = "56.1"
 
 # Agregação para contar a quantidade de empresas de restaurantes abertas em cada ano
 pipeline = [
     # Filtrar as empresas com prefixo do CNAE PRINCIPAL de restaurantes
-    {"$match": {"CNAE PRINCIPAL": {"$regex": f"^{prefixo_cnae_restaurantes}.*"}}},
+    {"$match": {"CNAE-FISCAL": {"$regex": f"^{prefixo_cnae_restaurantes}"}}},
+    # Extrair o ano da data de início de atividade
+    {"$addFields": {"ANO": {"$substr": ["CODIGO NATUREZA JURIDICA", 0, 4]}}},
     # Agrupar por ano e contar a quantidade de documentos em cada grupo
-    {"$group": {"_id": {"$substr": ["$DATA DE INÍCIO ATIVIDADE", 0, 4]}, "count": {"$sum": 1}}},
+    {"$group": {"_id": "$ANO", "count": {"$sum": 1}}},
     # Ordenar por ano em ordem crescente
     {"$sort": {"_id": 1}}
 ]
 
 # Executar a agregação
 result = collection.aggregate(pipeline)
-print(result)
+print (result)
 # Exibir o resultado
 for doc in result:
     ano = doc["_id"]

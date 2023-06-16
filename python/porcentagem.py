@@ -5,17 +5,21 @@ client = MongoClient('mongodb://localhost:27017/')
 db = client['meu_banco_de_dados']
 collection = db['meu_colecao']
 
-# Recuperar os dados da coleção
-data = collection.find()
-print (collection)
-# Contar o número total de documentos
-total_empresas = collection.count_documents({})
-print(total_empresas)
-# Contar o número de empresas ativas (SITUAÇÃO CADASTRAL igual a "Ativa")
-empresas_ativas = collection.count_documents({"DATA SITUAÇÃO CADASTRAL": 2})
-print (empresas_ativas)
-# Calcular a porcentagem de empresas ativas
-porcentagem_ativas = (empresas_ativas / total_empresas) * 100
+documento_ativo = collection.find_one()
 
-# Exibir o resultado
-print(f"Porcentagem de empresas ativas: {porcentagem_ativas:.2f}%")
+# Verificar se o documento existe
+if documento_ativo:
+    # Recuperar os dados da coluna 'DATA_SITUACAO_CADASTRAL'
+    data_situacao_cadastral = documento_ativo.get('DATA_SITUACAO_CADASTRAL', [])
+
+    # Contar a frequência de cada valor
+    frequencia = {}
+    for valor in data_situacao_cadastral:
+        frequencia[valor] = frequencia.get(valor, 0) + 1
+
+    # Exibir a frequência de cada valor
+    for valor, count in frequencia.items():
+        print(f"{valor}: {count}")
+    print("legenda:\n01 - NULA\n02 - ATIVA\n03 - SUSPENSA\n04 - INAPTA\n08 - BAIXADA" )
+else:
+    print("Não foi encontrado nenhum documento ativo.")
