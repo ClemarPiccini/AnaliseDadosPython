@@ -13,7 +13,7 @@ documentos = collection.find()
 df = pd.DataFrame(documentos)
 
 # Especificar o nome do arquivo Excel
-nome_arquivo = 'dadoss.xlsx'
+nome_arquivo = 'dadosss.xlsx'
 
 # Salvar o DataFrame no arquivo Excel
 df.to_excel(nome_arquivo, index=False)

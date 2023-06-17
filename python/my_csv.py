@@ -10,7 +10,7 @@ collection = db['meu_colecao']
 documentos = collection.find()
 
 # Especificar o nome do arquivo CSV
-nome_arquivo = 'dadoss.csv'
+nome_arquivo = 'dadosss.csv'
 
 # Abrir o arquivo CSV em modo de gravação
 with open(nome_arquivo, 'w', newline='') as csvfile:

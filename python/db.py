@@ -7,8 +7,8 @@ db = client['meu_banco_de_dados']
 collection = db['meu_colecao']
 
 # Separar os dados do dicionário em colunas
-cnpj = data_dict.get('CNPJ') 
-identificador_matriz_filial = data_dict.get('IDENTIFICADOR MATRIZ/FILIAL') 
+cnpj = data_dict.get('CNPJ')
+identificador_matriz_filial = data_dict.get('IDENTIFICADOR MATRIZ/FILIAL')
 razao_social = data_dict.get('RAZÃO SOCIAL/NOME EMPRESARIAL')
 nome_fantasia = data_dict.get('NOME FANTASIA')
 situacao_cadastral = data_dict.get('SITUAÇÃO CADASTRAL')
