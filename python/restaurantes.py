@@ -13,7 +13,7 @@ pipeline = [
     # Filtrar as empresas com prefixo do CNAE PRINCIPAL de restaurantes
     {"$match": {"CNAE-FISCAL": {"$regex": f"^{prefixo_cnae_restaurantes}"}}},
     # Extrair o ano da data de início de atividade
-    {"$addFields": {"ANO": {"$substr": ["CODIGO NATUREZA JURIDICA", 0, 4]}}},
+    {"$addFields": {"ANO": {"$substr": ["DATA-INICIO-ATIVIDADE", 0, 4]}}},
     # Agrupar por ano e contar a quantidade de documentos em cada grupo
     {"$group": {"_id": "$ANO", "count": {"$sum": 1}}},
     # Ordenar por ano em ordem crescente
@@ -21,10 +21,12 @@ pipeline = [
 ]
 
 # Executar a agregação
-result = collection.aggregate(pipeline)
-print (result)
+result = list(collection.aggregate(pipeline))
+
 # Exibir o resultado
 for doc in result:
     ano = doc["_id"]
     quantidade = doc["count"]
     print(f"Ano: {ano}, Quantidade: {quantidade}")
+
+#restaurante ativos nao ta funcionando #

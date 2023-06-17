@@ -21,5 +21,17 @@ if documento_ativo:
     for valor, count in frequencia.items():
         print(f"{valor}: {count}")
     print("legenda:\n01 - NULA\n02 - ATIVA\n03 - SUSPENSA\n04 - INAPTA\n08 - BAIXADA" )
+    
+    # Valores fornecidos
+    ativa = 26
+    inapta = 35
+    baixada = 39
+    
+    # Calcular o total de empresas
+    total_empresas = ativa + inapta + baixada
+    
+    # Calcular a porcentagem de empresas ativas
+    porcentagem_ativas = (ativa / total_empresas) * 100
+    print(f"A porcentagem total de empresas ativas é: {porcentagem_ativas:.2f}%")
 else:
     print("Não foi encontrado nenhum documento ativo.")
