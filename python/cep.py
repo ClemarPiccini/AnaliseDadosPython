@@ -19,13 +19,9 @@ companies = collection.find({
     }
 })
 
-# Contador de empresas
 count = 0
-
-# Exibir os nomes das empresas encontradas
 for company in companies:
     count += 1
     print(f"documento {count}: ")
 
-# Exibir o total de empresas encontradas
 print(f"Total de empresas dentro do intervalo de CEPs 51")

@@ -1,6 +1,5 @@
 from db import conectar_banco_dados
 
-# Obter a conexão com o banco de dados MongoDB
 db = conectar_banco_dados()
 collection = db['meu_colecao']
 
