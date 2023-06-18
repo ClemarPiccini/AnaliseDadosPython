@@ -1,11 +1,8 @@
 import pandas as pd
-from pymongo import MongoClient
+from db import conectar_banco_dados
 
-# Conectar ao banco de dados MongoDB
-client = MongoClient('mongodb://localhost:27017/')
-db = client['meu_banco_de_dados']
+db = conectar_banco_dados()
 collection = db['meu_colecao']
-
 # Recuperar todos os documentos da coleção
 documentos = collection.find()
 

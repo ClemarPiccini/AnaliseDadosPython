@@ -1,8 +1,6 @@
-from pymongo import MongoClient
+from db import conectar_banco_dados
 
-# Conectar ao banco de dados MongoDB
-client = MongoClient('mongodb://localhost:27017/')
-db = client['meu_banco_de_dados']
+db = conectar_banco_dados()
 collection = db['meu_colecao']
 
 # Definir os limites dos CEPs (01422000 ± 5000)

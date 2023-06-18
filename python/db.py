@@ -1,9 +1,13 @@
 from pymongo import MongoClient
 from main import data_dict
 
-# Conectar ao banco de dados MongoDB
-client = MongoClient('mongodb://localhost:27017/')
-db = client['meu_banco_de_dados']
+# Função para estabelecer a conexão com o banco de dados MongoDB
+def conectar_banco_dados():
+    client = MongoClient('mongodb://localhost:27017/')
+    db = client['meu_banco_de_dados']
+    return db
+
+db = conectar_banco_dados()
 collection = db['meu_colecao']
 
 # Separar os dados do dicionário em colunas
